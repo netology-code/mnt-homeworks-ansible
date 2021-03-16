@@ -23,5 +23,6 @@ provisioner:
         jdk_distr_name: openjdk-11-linux.tar.gz
         jdk_folder: "{{ jdk_distr_name.split('-')[:2] | join('-')  }}"
         java_home: "/opt/jdk/{{ jdk_folder }}"
+        environ_type: "docker"
 verifier:
   name: ansible
