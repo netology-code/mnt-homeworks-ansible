@@ -2,17 +2,12 @@
 dependency:
   name: galaxy
 driver:
-  name: docker
+  name: vagrant
+  provider:
+    name: virtualbox
 platforms:
-  - name: centos8
-    image: docker.io/pycontribs/centos:8
-    pre_build_image: true
-  - name: centos7
-    image: docker.io/pycontribs/centos:7
-    pre_build_image: true
   - name: ubuntu
-    image: docker.io/pycontribs/ubuntu:latest
-    pre_build_image: true
+    box: ubuntu/bionic64
 provisioner:
   name: ansible
   inventory:
@@ -22,7 +17,7 @@ provisioner:
         jdk_distr_name: jdk-11.0.10_linux-x64_bin.tar.gz
         jdk_folder: "{{ jdk_distr_name.split('-')[:2] | join('-')  }}"
         java_home: "/opt/jdk/{{ jdk_folder }}"
-        environ_type: "docker"
+        environ_type: "vagrant"
 verifier:
   name: ansible
 

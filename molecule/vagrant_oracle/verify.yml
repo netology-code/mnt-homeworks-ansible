@@ -4,7 +4,7 @@
 - name: Verify
   hosts: all
   gather_facts: false
-  tasks:  
+  tasks:
   - name: Check Java can running
     command:
       cmd: "java -version"
