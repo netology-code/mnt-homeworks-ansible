@@ -4,10 +4,7 @@
 - name: Verify
   hosts: all
   gather_facts: false
-  tasks:
-  - name: Debug variables 
-    debug:
-      msg: "{{ java_home }}"
+  tasks:  
   - name: Check Java can running
     command:
       cmd: "java -version"
