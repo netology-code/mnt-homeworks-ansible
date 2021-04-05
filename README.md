@@ -13,6 +13,7 @@ Role Variables
 | jdk_distr_name | openjdk-11-linux.tar.gz | Name of destination archive |
 | jdk_folder | "{{ jdk_distr_name.split('-')[:2] | join('-')  }}" | Name of directory to unarchive. By default it used jinja template from archive name |
 | java_home | "/opt/jdk/{{ jdk_folder }}" | Specify JAVA_HOME environment |
+| environ_type | docker | Hardcode variables what defined environment type, for now only two type available: `docker` and `vagrant`. With `vagrant` role user templating for export variables to OS |
 
 Example Playbook
 ----------------
