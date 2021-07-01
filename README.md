@@ -3,6 +3,11 @@ Java
 
 Simple role to install openjdk from remote or any jdk in local.
 
+Requirements
+-------------
+For using molecule scenario, you will need to install `molecule-vagrant` using command:
+`pip install molecule-vagrant`
+
 Role Variables
 --------------
 
@@ -33,7 +38,7 @@ Or, if you specify rolename to java:
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------

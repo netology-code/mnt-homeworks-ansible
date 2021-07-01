@@ -38,7 +38,7 @@
     owner: root
     group: root
     mode: 0644
-  when: environ_type == 'vagrant'
+  when: environ_type != 'docker'
 - name: Set owner for Java directory
   become: yes
   ansible.builtin.file:
