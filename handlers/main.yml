@@ -1,2 +1,7 @@
 ---
-# handlers file for mnt-homeworks-ansible
+- name: restart Elasticsearch
+  become: true
+  service:
+    name: elasticsearch
+    state: restarted
+  when: ansible_virtualization_type != 'docker'

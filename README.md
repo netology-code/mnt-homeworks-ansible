@@ -1,46 +1,38 @@
-Java
+Role Name
 =========
 
-Simple role to install openjdk from remote or any jdk in local.
+A brief description of the role goes here.
 
 Requirements
--------------
-For using molecule scenario, you will need to install `molecule-vagrant` using command:
-`pip install molecule-vagrant`
+------------
+
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
 Role Variables
 --------------
 
-| Variable name | Default | Description |
-|--------------|-----------------------------|------------------------------------------------|
-| jdk_distr_type | remote | Define type of distr. Possible value: remote, local |
-| jdk_url | "{{ openjdk[11] }}" | Need to set only when `jdk_distr_type` set to remote. This vaiable use dict from `/vars/main.yml` |
-| jdk_distr_name | openjdk-11-linux.tar.gz | Name of destination archive |
-| jdk_folder | "{{ jdk_distr_name.split('-')[:2] | join('-')  }}" | Name of directory to unarchive. By default it used jinja template from archive name |
-| java_home | "/opt/jdk/{{ jdk_folder }}" | Specify JAVA_HOME environment |
-| environ_type | docker | Hardcode variables what defined environment type, for now only two type available: `docker` and `vagrant`. With `vagrant` role user templating for export variables to OS |
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+
+Dependencies
+------------
+
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
-```yaml
-- hosts: all
-  roles:
-      - mnt-homeworks-ansible
-```
-Or, if you specify rolename to java:
-```yaml
-- hosts: all
-  roles:
-      - java
-```
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
+      roles:
+         - { role: username.rolename, x: 42 }
 
 License
 -------
 
-MIT
+BSD
 
 Author Information
 ------------------
 
-Alexey Metlyakov
+An optional section for the role authors to include contact information, or a website (HTML is not allowed).

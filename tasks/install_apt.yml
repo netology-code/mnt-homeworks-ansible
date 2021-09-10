@@ -1,0 +1,13 @@
+---
+- name: "Download Elasticsearch's deb"
+  get_url:
+    url: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{ elasticsearch_version }}-amd64.deb"
+    dest: "/tmp/elasticsearch-{{ elasticsearch_version }}-amd64.deb"
+  register: download_elastic
+  until: download_elastic is succeeded
+- name: Install Elasticsearch
+  become: true
+  apt:
+    deb: "/tmp/elasticsearch-{{ elasticsearch_version }}-amd64.deb"
+    state: present
+  notify: restart Elasticsearch
