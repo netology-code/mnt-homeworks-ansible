@@ -10,5 +10,5 @@
 - name: Copy Elasticsearch to manage host
   copy:
     src: "files/elasticsearch-{{ elasticsearch_version }}-amd64.deb"
+    mode: 0755
     dest: "/tmp/elasticsearch-{{ elasticsearch_version }}-amd64.deb"
-  notify: restart Elasticsearch

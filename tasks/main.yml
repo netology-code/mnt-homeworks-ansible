@@ -1,5 +1,5 @@
 ---
 - import_tasks: precheck.yml
 - import_tasks: "download_{{ ansible_facts.pkg_mgr }}.yml"
-- import_tasks: "install_{{ ansible_facts.pkg_mgr }}.yml"
+- include_tasks: "install_{{ ansible_facts.pkg_mgr }}.yml"
 - import_tasks: configure.yml
