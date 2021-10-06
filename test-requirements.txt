@@ -1,6 +1,5 @@
 molecule==3.4.0
 molecule_docker
 docker
-selinux
 ansible-lint
 yamllint
