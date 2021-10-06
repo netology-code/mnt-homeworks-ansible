@@ -1,6 +1,6 @@
 molecule==3.4.0
-molecule_podman==0.3.0
-podman
+molecule_docker
+docker
 selinux
 ansible-lint
 yamllint
