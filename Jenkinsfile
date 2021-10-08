@@ -11,7 +11,6 @@ pipeline {
         stage('Install molecule') {
             steps{
                 sh 'pip3 install -r test-requirements.txt'
-                sh "echo =============="
             }
         }
         stage('Run Molecule'){
