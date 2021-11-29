@@ -1,0 +1,19 @@
+# .ansible-lint
+exclude_paths:
+  - .molecule/
+  - .ansible-lint
+  - .gitignore
+  - .yamllint
+  - .tox/
+  - molecule/
+  - README.md
+warn_list:  # or 'skip_list' to silence them completely
+  - load-failure  # Failed to load or parse file
+  - yaml
+  - '208'
+  - '106'
+  - command-instead-of-module
+skip_list:
+  - risky-file-permissions
+  - experimental  # all rules tagged as experimental
+  - var-naming  # All variables should be named using only lowercase and underscores
