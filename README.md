@@ -1,33 +1,30 @@
-Elascticsearch role
+Clickhouse
 =========
 
-Роль для установки elasticsearch на хостах с ОС: Debian, Ubuntu, CentOS, RHEL.
-
-Requirements
-------------
-
-Поддерживаются только ОС семейств debian и EL.
+This role can install Clickhouse on EL
 
 Role Variables
 --------------
 
-| Variable name | Default | Description |
-|-----------------------|----------|-------------------------|
-| elasticsearch_version | "7.14.0" | Параметр, который определяет какой версии elasticsearch будет установлен |
+|vars| description|
+|------|---------------|
+| clickhouse_version | Version of Clickhouse to install |
 
 Example Playbook
 ----------------
 
-    - hosts: all
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+
+    - hosts: servers
       roles:
-         - { role: mnt-homeworks-ansible }
+         - { role: clickhouse }
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Alexey Metlyakov

@@ -1,8 +1,7 @@
 galaxy_info:
   author: Alexey Metlyakov
-  description: your role description
+  description: This role install clickhouse on EL
   company: netology
-  role_name: elasticsearch_role
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -17,7 +16,7 @@ galaxy_info:
   # - CC-BY-4.0
   license: MIT
 
-  min_ansible_version: 2.1
+  min_ansible_version: 2.10
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -29,12 +28,20 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-    - name: Ubuntu
+    - name: Centos
       versions:
-        - all
-    - name: CentOS
+        - 7
+        - 8
+    - name: RHEL
       versions:
-        - all
+        - 7
+        - 8
+  # - name: SomePlatform
+  #   versions:
+  #   - all
+  #   - 1.0
+  #   - 7
+  #   - 99.99
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes

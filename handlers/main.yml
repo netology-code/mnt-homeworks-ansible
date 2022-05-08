@@ -1,7 +1,6 @@
 ---
-- name: restart Elasticsearch
+- name: Start clickhouse service
   become: true
-  service:
-    name: elasticsearch
+  ansible.builtin.service:
+    name: clickhouse-server
     state: restarted
-  when: ansible_virtualization_type != 'docker'
