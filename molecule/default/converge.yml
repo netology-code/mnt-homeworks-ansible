@@ -4,4 +4,4 @@
   tasks:
     - name: "Include elasticsearch-role"
       include_role:
-        name: "elasticsearch-role"
+        name: "mnt-homeworks-ansible"
