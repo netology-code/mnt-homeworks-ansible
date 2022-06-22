@@ -25,5 +25,7 @@
 - name: Create database
   ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
   register: create_db
+  when:
+    - ansible_virtualization_type != "docker"
   failed_when: create_db.rc != 0 and create_db.rc !=82
   changed_when: create_db.rc == 0
