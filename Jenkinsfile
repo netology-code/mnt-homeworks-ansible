@@ -6,13 +6,13 @@ pipeline {
         stage('Checkout repo'){
             steps {
                 dir('freestyle') {
-                git branch: 'main', credentialsId: '4d2e8f2e-5af7-4ebe-8ab6-2ea1f1df37da', url: 'git@github.com:netology-code/mnt-homeworks-ansible.git'
+                git branch: 'main', credentialsId: 'e8159eed-9d1a-43ac-a5e3-a415afe999a0', url: 'git@github.com:netology-code/mnt-homeworks-ansible.git'
                 }
             }
         }
         stage ('Prepare for molecule'){
             steps {
-                sh 'pip3 install "molecule==3.3.4" "molecule_docker==0.3.3" yamllint ansible-lint'
+                sh 'pip3 install --force "molecule==3.3.4" "molecule_docker==0.3.3" yamllint ansible-lint'
             }
         }
         stage('Run Molecule'){
